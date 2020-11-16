@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>
+            Capping image fidelity to 2x to minimize loading time on
+            high-end mobile phones
+        </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="stylesheet" href="./style.css" />
+    </head>
+    <body>
+        <!-- partial:index.partial.html -->
+        <picture>
+            <!-- Landscape tablet / computers -->
+            <source
+                media="(min-width: 1024px)"
+                sizes="(min-width: 1280px) 33vw, 50vw"
+                srcset="
+                    https://placehold.it/640   640w,
+                    https://placehold.it/1024 1024w,
+                    https://placehold.it/1280 1280w,
+                    https://placehold.it/1440 1440w
+                "
+            />
+            <!-- Portrait tablets -->
+            <source
+                media="(min-width: 415px)"
+                srcset="https://placehold.it/768 2x"
+            />
+            <!-- iPhone X, XR... -->
+            <source
+                media="(min-width: 414px)"
+                srcset="https://placehold.it/828 2x"
+            />
+            <!-- iPhone 6/7/8 -->
+            <source
+                media="(min-width: 375px)"
+                srcset="https://placehold.it/750 2x"
+            />
+            <!-- IE (src) + iPhone 12 Mini (capped) -->
+            <img
+                src="https://placehold.it/1280"
+                srcset="https://placehold.it/720 2x"
+                alt="Batman Super-man and Wonder"
+            />
+        </picture>
+        <!-- partial -->
+    </body>
+</html>
